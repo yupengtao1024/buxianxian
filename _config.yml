@@ -101,7 +101,9 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: yupengtao@你的服务器ip:/home/yupengtao/blog.git
+  branch: master
 
 # abbrlink config
 abbrlink:
