@@ -1,0 +1,34 @@
+#footer-wrap
+  if theme.footer.owner.enable
+    - const currentYear = new Date().getFullYear()
+    - const sinceYear = theme.footer.owner.since
+    .copyright
+      if sinceYear && sinceYear != currentYear
+        != `&copy;${sinceYear} - ${currentYear} By ${config.author}`
+      else
+        != `&copy;${currentYear} By ${config.author}`
+  if theme.footer.copyright
+    - const v = getVersion()
+    .framework-info
+      span= _p('footer.framework') + ' '
+      a(href='https://hexo.io')= `Hexo ${v.hexo}`
+      span.footer-separator |
+      span= _p('footer.theme') + ' '
+      a(href='https://github.com/jerryc127/hexo-theme-butterfly')= `Butterfly ${v.theme}`
+  if theme.footer.custom_text
+    .footer_custom_text!= theme.footer.custom_text
+
+    #workboard
+
+    p#ghbdages
+      a.github-badge(target='_blank' href="https://hexo.io/" style='margin-inline:5px' title="博客框架为Hexo_v7.3.0")
+        img(src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" alt='博客框架为Hexo_v7.3.0')
+
+      a.github-badge(target='_blank' href="https://butterfly.js.org/" style='margin-inline:5px' title="主题版本Butterfly_v5.3.5")
+        img(src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" alt='主题版本Butterfly_v5.3.5')
+
+      a.github-badge(target='_blank' href="https://github.com/" style='margin-inline:5px' title="本网站源码由Github提供存储仓库")
+        img(src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" alt='本网站源码由Github提供存储仓库')
+
+      a.github-badge(target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style='margin-inline:5px' title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可")
+        img(src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt='本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可')
